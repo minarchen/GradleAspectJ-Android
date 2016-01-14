@@ -71,10 +71,9 @@ class AndroidAspectJPlugin implements Plugin<Project> {
                 def types = variant.buildType*.name
 
                 def variantName = variant.name.capitalize()
-                def newTaskName = "compile${variantName}Aspectj"
+                def newTaskName = "compile${variantName}AspectjMMMMMMM"
 
                 def final String[] srcDirs = ['androidTest', *flavors, *types].collect {"src/$it/aspectj"};
-                println "I'm here " + srcDirs[0]
                 def final FileCollection aspects = new SimpleFileCollection(srcDirs.collect { project.file(it) });
                 def final FileCollection aptBuildFiles = getAptBuildFilesRoot(project, variant);
 
